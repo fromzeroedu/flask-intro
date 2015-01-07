@@ -1,3 +1,3 @@
-### Step #6
+### Step #7
 
-HTTP Methods: GET
+HTTP Methods: POST
