@@ -7,7 +7,8 @@ def index():
 
 @app.route('/hello')
 def hello():
-    return 'Hello World!'
+    i = 1
+    return 'Hello World!'  + i
 
 if __name__ == '__main__':
     app.debug = True
