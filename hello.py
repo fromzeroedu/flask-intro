@@ -1,15 +1,12 @@
-from flask import Flask, url_for
+from flask import Flask, request
 app = Flask(__name__)
 
-@app.route('/')
-def show_url_for():
-    # display the url for a function
-    return url_for('show_user_profile', username='jorge')
-
-@app.route('/user/<username>')
-def show_user_profile(username):
-    # show the user profile for that user
-    return 'User %s' % username
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return 'logged in'
+    else:
+        return '<form method="post" action="/login"><input type="text" /><p><button type="submit">Submit</button></form>'
 
 if __name__ == '__main__':
     app.debug = True

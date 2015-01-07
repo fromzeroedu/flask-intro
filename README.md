@@ -1,3 +1,3 @@
-### Step #4
+### Step #6
 
-Here we see passing variables on the URL
+HTTP Methods: GET
