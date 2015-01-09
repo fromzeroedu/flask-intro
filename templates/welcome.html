@@ -1,14 +1,12 @@
-<!doctype html>
-<title>Welcome Page</title>
+{% extends "base.html" %}
 
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<ul class=flashes>
-  {% for message in messages %}
-  <li>{{ message }}</li>
-  {% endfor %}
-</ul>
-{% endif %}
-{% endwith %}
+{% block title %}Index{% endblock %}
 
-<p>Welcome, {{ username }}!</p>
+{% block head %}
+  <script type="text/javascript">var x = 1;</script>
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+  <p>Welcome, {{ username }}!</p>
+{% endblock %}

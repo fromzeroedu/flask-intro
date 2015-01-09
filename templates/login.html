@@ -1,13 +1,8 @@
-<!doctype html>
-<html>
-<head>
-<title>Login Page - The Acme Co.</title>
-</head>
+{% extends "base.html" %}
 
-<body>
+{% block title %}Login{% endblock %}
 
-<h1>The Acme Co.</h1>
-
+{% block content %}
 
 <form action="/login" method="POST">
 
@@ -27,4 +22,5 @@
     <button type="Submit">Login</button>
 
 </form>
-</body>
+
+{% endblock %}

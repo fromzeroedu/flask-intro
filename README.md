@@ -1,3 +1,3 @@
-### Step #13
+### Step #14
 
-Here we take a look at template inheritance. In this step, though, we just add the title and proper html formatting.
+Template inheritance in action.
