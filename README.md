@@ -1,3 +1,5 @@
-### Step #9
+### Step #10
 
-A better login page using request.method and request.form (A MultiDict with the parsed form data from POST or PUT requests), whereas request.values combines both form and args.
+Now we write a simple function that checks for the right password and if not return an error context. We're also now using request.form.get()
+
+Also changed the HTML field to password.
