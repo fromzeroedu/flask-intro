@@ -1,5 +1,3 @@
-### Step #12
+### Step #13
 
-We will use Flash Messages to send a login succesful message to welcome page.
-
-Try first to get the error if you don't have the secret key.
+Here we take a look at template inheritance. In this step, though, we just add the title and proper html formatting.
