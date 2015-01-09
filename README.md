@@ -1,5 +1,5 @@
-### Step #10
+### Step #11
 
-Now we write a simple function that checks for the right password and if not return an error context. We're also now using request.form.get()
+We don't want the reload issue happening after a POST, so we're going to process the login page, then redirect to the welcome page using url_for.
 
-Also changed the HTML field to password.
+If the login is incorrect. we'll send a flash message back to the login page.
