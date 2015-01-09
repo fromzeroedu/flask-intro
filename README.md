@@ -1,5 +1,5 @@
-### Step #11
+### Step #12
 
-We don't want the reload issue happening after a POST, so we're going to process the login page, then redirect to the welcome page using url_for.
+We will use Flash Messages to send a login succesful message to welcome page.
 
-If the login is incorrect. we'll send a flash message back to the login page.
+Try first to get the error if you don't have the secret key.

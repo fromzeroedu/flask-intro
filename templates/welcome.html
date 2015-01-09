@@ -1,4 +1,14 @@
 <!doctype html>
 <title>Welcome Page</title>
 
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class=flashes>
+  {% for message in messages %}
+  <li>{{ message }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
 <p>Welcome, {{ username }}!</p>
