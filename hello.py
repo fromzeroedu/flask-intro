@@ -7,7 +7,7 @@ def login():
     if request.method == 'POST':
         if valid_login(request.form.get('username'),
                         request.form.get('password')):
-            redirect(url_for('welcome'), username=request.form.get('username'))
+            return redirect(url_for('welcome', username=request.form.get('username')))
         else:
             error = "Incorrect username and password"
     return render_template('login.html', error=error)
