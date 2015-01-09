@@ -1,3 +1,3 @@
-### Step #14
+### Step #15
 
-Template inheritance in action.
+Static files.

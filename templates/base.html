@@ -6,7 +6,11 @@
   {% endblock %}
 </head>
 <body>
-  <h1>The Acme Co.</h1>
+
+  <div id="logo">
+    <img src="{{ url_for('static', filename='acme.png') }}" alt="Acme Corp." height="100px" />
+  </div>
+
   {% with messages = get_flashed_messages() %}
   {% if messages %}
   <div id="messages">
