@@ -1,3 +1,3 @@
-### Step #15
+### Step #16
 
-Static files.
+Implementing login with cookies.
