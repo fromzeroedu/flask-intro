@@ -15,6 +15,12 @@ def login():
             error = "Incorrect username and password"
     return render_template('login.html', error=error)
 
+@app.route('/logout')
+def logout():
+    response = make_response(redirect(url_for('login')))
+    response.set_cookie('username', '', expires=0)
+    return response
+
 @app.route('/')
 def welcome():
     username = request.cookies.get("username")

@@ -8,5 +8,5 @@
 {% endblock %}
 
 {% block content %}
-  <p>Welcome, {{ username }}!</p>
+  <p>Welcome, {{ username }}! - <a href="{{ url_for('logout')}}">logout</a></p>
 {% endblock %}

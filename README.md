@@ -1,3 +1,3 @@
-### Step #16
+### Step #17
 
-Implementing login with cookies.
+Implementing logout with cookies. Note that we changed the url_for for login and logout.
