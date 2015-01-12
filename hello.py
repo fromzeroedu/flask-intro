@@ -34,5 +34,5 @@ def valid_login(username, password):
 
 if __name__ == '__main__':
     app.debug = True
-    app.secret_key = 'SuperSecretKey'
+    app.secret_key = '\xd1M<n)\xf1\xf9\x08\xe2z\x8ai\x99\xf8\xb8\xf0\xe9\x06\x95"0\x9d\xd2\xf9'
     app.run()
