@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for, flash, make_response
+from flask import Flask, request, render_template, redirect, url_for, flash, session
 app = Flask(__name__)
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -8,24 +8,21 @@ def login():
         if valid_login(request.form.get('username'),
                         request.form.get('password')):
             flash("Succesfully logged in")
-            response = make_response(redirect(url_for('welcome')))
-            response.set_cookie('username', request.form.get('username'))
-            return response
+            session['username'] = request.form.get('username')
+            return redirect(url_for('welcome'))
         else:
             error = "Incorrect username and password"
     return render_template('login.html', error=error)
 
 @app.route('/logout')
 def logout():
-    response = make_response(redirect(url_for('login')))
-    response.set_cookie('username', '', expires=0)
-    return response
+    session.pop('username', None)
+    return redirect(url_for('login'))
 
 @app.route('/')
 def welcome():
-    username = request.cookies.get("username")
-    if username:
-        return render_template('welcome.html', username=username)
+    if 'username' in session:
+        return render_template('welcome.html', username=session['username'])
     else:
         return redirect(url_for('login'))
 
