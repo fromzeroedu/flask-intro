@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template, redirect, url_for, flash, session
 import logging
 from logging.handlers import RotatingFileHandler
-from flaskext.mysql import MySQL
+
+app = Flask(__name__)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -37,7 +38,6 @@ def valid_login(username, password):
         return False
 
 if __name__ == '__main__':
-    app = Flask(__name__)
     app.debug = True
     app.secret_key = 'SuperSecretKey'
 
@@ -45,14 +45,6 @@ if __name__ == '__main__':
     handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
     handler.setLevel(logging.INFO)
     app.logger.addHandler(handler)
-
-    #mysql
-    mysql = MySQL()
-    app.config['MYSQL_DATABASE_USER'] = 'root'
-    app.config['MYSQL_DATABASE_PASSWORD'] = 'test'
-    app.config['MYSQL_DATABASE_DB'] = 'user'
-    app.config['MYSQL_DATABASE_HOST'] = '192.168.59.103'
-    mysql.init_app(app)
 
     # run
     app.run()

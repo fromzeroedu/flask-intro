@@ -4,7 +4,7 @@ Dockerizing our app.
 
 To build the image:
 ```
-docker build -t fromzeroedu/myflaskapp .
+docker build .
 ```
 
 First, let's create a container from the From Zero image, but making our directory
