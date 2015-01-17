@@ -3,6 +3,8 @@ import logging
 from logging.handlers import RotatingFileHandler
 from flaskext.mysql import MySQL
 
+app = Flask(__name__)
+
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     error = None
@@ -37,7 +39,6 @@ def valid_login(username, password):
         return False
 
 if __name__ == '__main__':
-    app = Flask(__name__)
     app.debug = True
     app.secret_key = 'SuperSecretKey'
 
