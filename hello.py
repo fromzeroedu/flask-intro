@@ -40,6 +40,7 @@ def valid_login(username, password):
 if __name__ == '__main__':
     app.debug = True
     app.secret_key = 'SuperSecretKey'
+
     # logging
     handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
     handler.setLevel(logging.INFO)
