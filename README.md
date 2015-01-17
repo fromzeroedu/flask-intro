@@ -1,3 +1,14 @@
-### Step #19
+### Step #20
 
-Using loggers.
+Dockerizing our app.
+
+To build the image:
+```
+docker build -t fromzeroedu/myflaskapp .
+```
+
+First, let's create a container from the From Zero image, but making our directory
+available as a data mount:
+```
+docker run -d -P --name myflaskapp -v /Users/jorge/flask-intro:/opt/webapp training/webapp python app.py
+```
