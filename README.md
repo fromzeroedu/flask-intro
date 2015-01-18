@@ -9,5 +9,5 @@ docker build -t flask-intro .
 
 Run it as:
 ```
-docker run -d -p 5000:5000 flask-intro
+docker run -d -p 5000:5000 -v /Users/jorge/flask-intro:/opt/flask-intro --name web flask-intro
 ```
