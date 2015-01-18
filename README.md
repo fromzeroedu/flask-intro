@@ -4,11 +4,10 @@ Dockerizing our app.
 
 To build the image:
 ```
-docker build .
+docker build -t flask-intro .
 ```
 
-First, let's create a container from the From Zero image, but making our directory
-available as a data mount:
+Run it as:
 ```
-docker run -d -P --name myflaskapp -v /Users/jorge/flask-intro:/opt/webapp training/webapp python app.py
+docker run -d -p 5000:5000 flask-intro
 ```
