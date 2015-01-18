@@ -49,35 +49,37 @@ USE my_flask_app;
 Create the User table
 ```
 CREATE TABLE user(
-    user_id INT NOT NULL AUTO_INCREMENT,
-    username VARCHAR(64) NOT NULL,
-    password VARCHAR(40) NOT NULL,
-    PRIMARY KEY(user_id)
-    );
-    ```
+user_id INT NOT NULL AUTO_INCREMENT,
+username VARCHAR(64) NOT NULL,
+password VARCHAR(40) NOT NULL,
+PRIMARY KEY(user_id)
+);
+```
 
-    Check the table exists
-    ```
-    SHOW TABLES;
-    ```
+Check the table exists
+```
+SHOW TABLES;
+```
 
-    Insert a record to make sure the table works
-    ```
-    insert into user values('','admin','12345');
-    ```
+Insert a record to make sure the table works
+```
+insert into user values('','jorge','12345');
+```
 
-    Check the record exists
-    ```
-    SELECT * FROM user;
-    ```
-    Now we need to install the Flask MySQL extension
-    ```
-    pip install flask-mysql
-    ```
+Check the record exists
+```
+SELECT * FROM user;
+```
 
 ## Tie the web app with the db app
 
+Regenerate the container with the new requirements.txt (flask-mysql)
+
+```
+docker build -t flask-intro-mysql .
+```
+
 Run the web container as:
 ```
-docker run -d -p 5000:5000 -v /Users/jorge/flask-intro:/opt/flask-intro --name web flask-intro
+docker run -d -p 5000:5000 -v /Users/jorge/flask-intro:/opt/flask-intro --name web --link db:mysql flask-intro-mysql
 ```

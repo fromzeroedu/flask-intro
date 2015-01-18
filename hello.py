@@ -33,7 +33,11 @@ def welcome():
         return redirect(url_for('login'))
 
 def valid_login(username, password):
-    if username == password:
+    cursor = mysql.connect().cursor()
+    cursor.execute("SELECT * from user where username='%s' and password='%s'" %
+                    (username, password))
+    data = cursor.fetchone()
+    if data:
         return True
     else:
         return False
@@ -51,7 +55,7 @@ if __name__ == '__main__':
     mysql = MySQL()
     app.config['MYSQL_DATABASE_USER'] = 'root'
     app.config['MYSQL_DATABASE_PASSWORD'] = 'test'
-    app.config['MYSQL_DATABASE_DB'] = 'user'
+    app.config['MYSQL_DATABASE_DB'] = 'my_flask_app'
     app.config['MYSQL_DATABASE_HOST'] = '192.168.59.103'
     mysql.init_app(app)
 
