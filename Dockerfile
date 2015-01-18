@@ -19,10 +19,10 @@ ADD . /opt/flask-intro
 #VOLUME ["/opt"]
 
 # Define working directory.
-#WORKDIR /data
+WORKDIR /opt/flask-intro
 
 # Define default command.
-#CMD ["mysqld_safe"]
+CMD ["python", "hello.py"]
 
 # Expose ports.
 EXPOSE 5000

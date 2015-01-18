@@ -47,4 +47,4 @@ if __name__ == '__main__':
     app.logger.addHandler(handler)
 
     # run
-    app.run()
+    app.run(host='0.0.0.0')
