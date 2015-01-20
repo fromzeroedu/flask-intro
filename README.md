@@ -79,7 +79,8 @@ Regenerate the container with the new requirements.txt (flask-mysql)
 docker build -t flask-intro-mysql .
 ```
 
-Run the web container as (note that only mounts on /Users work at this time):
+Run the web container as (note for now you can only mount /Users folders)
+NO MORE virtualenv:
 ```
 docker run -d -p 5000:5000 -v /Users/jorge/projects/flask-intro:/opt/flask-intro --name web --link db:mysql flask-intro-mysql
 ```
