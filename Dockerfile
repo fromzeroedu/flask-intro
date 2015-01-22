@@ -15,9 +15,6 @@ ADD requirements.txt /opt/flask-intro/
 RUN pip install -r requirements.txt
 ADD . /opt/flask-intro
 
-# Define working directory.
-WORKDIR /opt/flask-intro
-
 # Define default command.
 CMD ["python", "hello.py"]
 
