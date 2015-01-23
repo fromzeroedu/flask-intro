@@ -56,7 +56,7 @@ if __name__ == '__main__':
     app.config['MYSQL_DATABASE_USER'] = 'root'
     app.config['MYSQL_DATABASE_PASSWORD'] = 'test'
     app.config['MYSQL_DATABASE_DB'] = 'my_flask_app'
-    app.config['MYSQL_DATABASE_HOST'] = '192.168.59.103'
+    app.config['MYSQL_DATABASE_HOST'] = 'mysql'
     mysql.init_app(app)
 
     # run
