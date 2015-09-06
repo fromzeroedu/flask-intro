@@ -54,8 +54,8 @@ if __name__ == '__main__':
 
     #mysql
     mysql = MySQL()
-    app.config['MYSQL_DATABASE_USER'] = 'fromzero'
-    app.config['MYSQL_DATABASE_PASSWORD'] = 'test'
+    app.config['MYSQL_DATABASE_USER'] = 'fromzeroedu'
+    # app.config['MYSQL_DATABASE_PASSWORD'] = '' # not required for cloud9
     app.config['MYSQL_DATABASE_DB'] = 'my_flask_app'
     app.config['MYSQL_DATABASE_HOST'] = os.getenv('IP', '0.0.0.0')
     mysql.init_app(app)
